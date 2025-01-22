@@ -32,6 +32,15 @@ public class updateNaukri {
         driver.findElement(By.id("saveBasicDetailsBtn")).click();
         Thread.sleep(1000);
         System.out.println("done");
+        System.out.println("done");
+        System.out.println("done");
+        System.out.println("done");
+        System.out.println("done");
+        System.out.println("done");
+        System.out.println("done");
+        System.out.println("done");
+        System.out.println("done");
+        System.out.println("done");
         driver.quit();
 
     }
