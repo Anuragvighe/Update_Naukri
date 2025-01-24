@@ -32,16 +32,10 @@ public class updateNaukri {
         Thread.sleep(1000);
         driver.findElement(By.id("saveBasicDetailsBtn")).click();
         Thread.sleep(1000);
-        System.out.println("done");
-        System.out.println("done");
-        System.out.println("done");
-        System.out.println("done");
-        System.out.println("done");
-        System.out.println("done");
-        System.out.println("done");
-        System.out.println("done");
-        System.out.println("done");
-        System.out.println("done");
+        System.out.println("-------------------------------------------------------------------------------------------");
+        System.out.println(ID+"- U P D A T E D _________ S U C C E S S F U L L Y");
+        System.out.println("-------------------------------------------------------------------------------------------");
+
         driver.quit();
 
     }
