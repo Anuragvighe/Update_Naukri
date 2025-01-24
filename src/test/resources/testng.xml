@@ -4,9 +4,6 @@
     <test verbose="2" preserve-order="true" name="C:/Users/HP/IdeaProjects/NaukriUpdate">
         <classes>
             <class name="First_selenium.CallingNaukriFunction">
-                <methods>
-            <include name="CallingNaukriFunction"/>
-        </methods>
         </class>
         </classes>
     </test>
