@@ -12,6 +12,7 @@ public class updateNaukri {
         WebDriver driver= new ChromeDriver();
         driver.get("https://www.naukri.com/mnjuser/profile?id=&altresid");
         driver.manage().window().maximize();
+        Thread.sleep(3000);
         driver.findElement(By.id("usernameField")).sendKeys(ID);
         Thread.sleep(100);
         driver.findElement(By.id("passwordField")).sendKeys(Pass);
