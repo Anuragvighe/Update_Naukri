@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class updateNaukri {
     public void updateNaukri(String ID, String Pass,String msg) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\Desktop\\mvn project\\New folder\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\Desktop\\mvn project\\Chromedriver133\\chromedriver-win64\\chromedriver.exe");
         WebDriver driver= new ChromeDriver();
         driver.get("https://www.naukri.com/mnjuser/profile?id=&altresid");
         driver.manage().window().maximize();
