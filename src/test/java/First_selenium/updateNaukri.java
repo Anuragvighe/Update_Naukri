@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class updateNaukri {
-    public void updateNaukri(String ID, String Pass,String msg) throws InterruptedException {
+    public void updateNaukri(String ID, String Pass,String msg,String chaR) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\Desktop\\mvn project\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         WebDriver driver= new ChromeDriver();
         driver.get("https://www.naukri.com/mnjuser/profile?id=&altresid");
@@ -42,7 +42,7 @@ public class updateNaukri {
         Thread.sleep(1000);
         driver.findElement(By.id("name")).sendKeys(Keys.BACK_SPACE);
         Thread.sleep(1000);
-        driver.findElement(By.id("name")).sendKeys("e");
+        driver.findElement(By.id("name")).sendKeys(chaR);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, 500);");
         Thread.sleep(1000);
