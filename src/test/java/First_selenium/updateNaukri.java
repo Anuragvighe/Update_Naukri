@@ -1,9 +1,6 @@
 package First_selenium;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class updateNaukri {
@@ -20,7 +17,26 @@ public class updateNaukri {
         driver.findElement(By.xpath("//*[contains(@type, 'submit') and text()='Login']")).click();
         //driver.findElement(By.className("nI-gNb-icon-img")).sendKeys(Keys.ENTER);
         Thread.sleep(4000);
-        driver.findElement(By.xpath("//div[@class='view-profile-wrapper']//a[@href='/mnjuser/profile' and text()='Complete']")).click();
+//        WebElement we1=driver.findElement(By.xpath("//div[@class='view-profile-wrapper']//a[@href='/mnjuser/profile' and text()='Complete']"));
+//        WebElement we2=driver.findElement(By.xpath("//div[@class='view-profile-wrapper']//a[@href='/mnjuser/profile' and text()='View']"));
+//        if(we1.isDisplayed()){
+//            Thread.sleep(3000);
+//            we1.click();}
+//        else{
+//            Thread.sleep(3000);
+//            we2.click();}
+
+        By completeBtn = By.xpath("//a[text()='Complete' and @href='/mnjuser/profile']");
+        By viewBtn     = By.xpath("//a[text()='View' and @href='/mnjuser/profile']");
+
+        if (driver.findElements(completeBtn).size() > 0) {
+            driver.findElement(completeBtn).click();
+        } else {
+            driver.findElement(viewBtn).click();
+        }
+
+        //we1.click();
+        //driver.findElement(By.xpath("//div[@class='view-profile-wrapper']//a[@href='/mnjuser/profile' and text()='Complete']")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[contains(@class, 'hdn')]//*[contains(@class, 'icon edit') and text()='editOneTheme']")).click();
         Thread.sleep(1000);
