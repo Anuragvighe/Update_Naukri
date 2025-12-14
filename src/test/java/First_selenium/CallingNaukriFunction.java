@@ -24,5 +24,15 @@ public class CallingNaukriFunction extends updateNaukri{
         UN.updateNaukri("anuragvighe45@gmail.com","Anurag@123","ANURAG AZURE DATA ENGINEER","e");
     }
 
+    @Test(priority = 5)
+    public void CallingNaukriFunctionSap() throws InterruptedException {
+        UN.updateNaukri("dsapekshi@gmail.com","Sapekshi@1234","SAPEKSHI","o");
+    }
+
+    @Test(priority = 6)
+    public void CallingNaukriFunctionSunny() throws InterruptedException {
+        UN.updateNaukri("sunnytayade89@gmail.com","Pooja@8912","SUNNY","e");
+    }
+    
 }
 
