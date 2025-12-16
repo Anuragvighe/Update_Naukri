@@ -42,5 +42,10 @@ public class CallingNaukriFunction extends updateNaukri{
     public void CallingNaukriFunction_Chandan() throws InterruptedException {
         UN.updateNaukri("cchakrabarty954@gmail.com","Google@12345","CHANDAN","y");
     }
+
+    @Test(priority = 9)
+    public void CallingNaukriFunction_Manish() throws InterruptedException {
+        UN.updateNaukri("Manishodnala@gmail.com","Manish@123","MANISH","a");
+    }
 }
 
