@@ -15,17 +15,7 @@ public class updateNaukri {
         driver.findElement(By.id("passwordField")).sendKeys(Pass);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[contains(@type, 'submit') and text()='Login']")).click();
-        //driver.findElement(By.className("nI-gNb-icon-img")).sendKeys(Keys.ENTER);
         Thread.sleep(4000);
-//        WebElement we1=driver.findElement(By.xpath("//div[@class='view-profile-wrapper']//a[@href='/mnjuser/profile' and text()='Complete']"));
-//        WebElement we2=driver.findElement(By.xpath("//div[@class='view-profile-wrapper']//a[@href='/mnjuser/profile' and text()='View']"));
-//        if(we1.isDisplayed()){
-//            Thread.sleep(3000);
-//            we1.click();}
-//        else{
-//            Thread.sleep(3000);
-//            we2.click();}
-
         By completeBtn = By.xpath("//a[text()='Complete' and @href='/mnjuser/profile']");
         By viewBtn     = By.xpath("//a[text()='View' and @href='/mnjuser/profile']");
 
@@ -34,9 +24,6 @@ public class updateNaukri {
         } else {
             driver.findElement(viewBtn).click();
         }
-
-        //we1.click();
-        //driver.findElement(By.xpath("//div[@class='view-profile-wrapper']//a[@href='/mnjuser/profile' and text()='Complete']")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[contains(@class, 'hdn')]//*[contains(@class, 'icon edit') and text()='editOneTheme']")).click();
         Thread.sleep(1000);
@@ -51,9 +38,7 @@ public class updateNaukri {
         System.out.println("-------------------------------------------------------------------------------------------");
         System.out.println(msg+" -P R O F I L E ___ U P D A T E D ___ S U C C E S S F U L L Y");
         System.out.println("-------------------------------------------------------------------------------------------");
-
         driver.quit();
-
     }
 }
 
