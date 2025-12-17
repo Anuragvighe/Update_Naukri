@@ -36,7 +36,7 @@ public class updateNaukri {
         driver.findElement(By.id("saveBasicDetailsBtn")).click();
         Thread.sleep(1000);
         System.out.println("-------------------------------------------------------------------------------------------");
-        System.out.println(msg+" -P R O F I L E ___ U P D A T E D ___ S U C C E S S F U L L Y");
+        System.out.println(msg+" - P R O F I L E ___ U P D A T E D ___ S U C C E S S F U L L Y");
         System.out.println("-------------------------------------------------------------------------------------------");
         driver.quit();
     }
