@@ -1,10 +1,9 @@
-[
-  {
-    "email": "anuragvighe28498@gmail.com",
-    "password": "Anurag@123",
-    "username": "ANURAG28498",
-    "flag": "e"
-  },
+[  {
+  "email": "anuragvighe28498@gmail.com",
+  "password": "Anurag@123",
+  "username": "ANURAG28498",
+  "flag": "e"
+},
   {
     "email": "anuragvighe333@gmail.com",
     "password": "Anurag@123",
@@ -58,5 +57,12 @@
     "password": "1+NordCE5",
     "username": "DIPTISH",
     "flag": "e"
+  },
+  {
+    "email": "anujghongade100@gmail.com",
+    "password": "902288@Anuj",
+    "username": "ANUJ",
+    "flag": "e",
+    "ProfileType": "Freshar"
   }
 ]

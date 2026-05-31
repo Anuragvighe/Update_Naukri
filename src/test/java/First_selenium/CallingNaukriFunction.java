@@ -18,7 +18,8 @@ public class CallingNaukriFunction extends JsonDataProvider{
                 user.get("email"),
                 user.get("password"),
                 user.get("username"),
-                user.get("flag")
+                user.get("flag"),
+                user.get("ProfileType")
         );
     }
 

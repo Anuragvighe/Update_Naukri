@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class updateNaukri {
-    public void updateNaukri(String ID, String Pass,String msg,String chaR) throws InterruptedException {
+    public void updateNaukri(String ID, String Pass,String msg,String chaR,String Profile) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\OneDrive\\Desktop\\mvn project\\New\\chromedriver-win64\\chromedriver.exe");
         //C:\Users\HP\OneDrive\Desktop\mvn project\chromedriver-win64\chromedriver.exe
         WebDriver driver= new ChromeDriver();
@@ -26,7 +26,12 @@ public class updateNaukri {
             driver.findElement(viewBtn).click();
         }
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//div[contains(@class, 'hdn')]//*[contains(@class, 'icon edit') and text()='editOneTheme']")).click();
+        if ("Freshar".equals(Profile))
+        {
+            driver.findElement(By.xpath("//div[contains(@class,'personal-details summary-container')]//*[contains(@class,'new-pencil')]")).click();
+        }else {
+            driver.findElement(By.xpath("//div[contains(@class, 'hdn')]//*[contains(@class, 'icon edit') and text()='editOneTheme']")).click();
+        }
         Thread.sleep(1000);
         driver.findElement(By.id("name")).sendKeys(Keys.BACK_SPACE);
         Thread.sleep(1000);
@@ -34,7 +39,8 @@ public class updateNaukri {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, 500);");
         Thread.sleep(1000);
-        driver.findElement(By.id("saveBasicDetailsBtn")).click();
+        if("Freshar".equals(Profile)){driver.findElement(By.id("submit-btn")).click();}else{
+        driver.findElement(By.id("saveBasicDetailsBtn")).click();}
         Thread.sleep(1000);
         System.out.println("-------------------------------------------------------------------------------------------");
         System.out.println(msg+" - P R O F I L E ___ U P D A T E D ___ S U C C E S S F U L L Y");
