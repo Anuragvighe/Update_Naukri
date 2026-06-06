@@ -64,5 +64,11 @@
     "username": "ANUJ",
     "flag": "e",
     "ProfileType": "Freshar"
+  },
+  {
+    "email": "alaspurekrishna@yahoo.com",
+    "password": "Krishna@123",
+    "username": "KRISHNA",
+    "flag": "e"
   }
 ]
