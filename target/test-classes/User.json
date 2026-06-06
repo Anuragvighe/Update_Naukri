@@ -1,68 +1,8 @@
-[  {
-  "email": "anuragvighe28498@gmail.com",
-  "password": "Anurag@123",
-  "username": "ANURAG28498",
-  "flag": "e"
-},
+[
   {
-    "email": "anuragvighe333@gmail.com",
-    "password": "Anurag@123",
-    "username": "ANURAG333",
-    "flag": "e"
-  },
-  {
-    "email": "vigheprajwal28@gmail.com",
-    "password": "Pass@1234",
-    "username": "PRAJWAL28",
-    "flag": "e"
-  },
-  {
-    "email": "anuragvighe45@gmail.com",
-    "password": "Anurag@123",
-    "username": "ANURAG AZURE DATA ENGINEER 45",
-    "flag": "e"
-  },
-  {
-    "email": "dsapekshi@gmail.com",
-    "password": "Sapekshi@1234",
-    "username": "SAPEKSHI",
-    "flag": "o"
-  },
-  {
-    "email": "sunnytayade89@gmail.com",
-    "password": "Pooja@8912",
-    "username": "SUNNY",
-    "flag": "e"
-  },
-  {
-    "email": "virkhadepallavi28@gmail.com",
-    "password": "Sept@is1234",
-    "username": "PALLAVI",
-    "flag": "e"
-  },
-  {
-    "email": "cchakrabarty954@gmail.com",
-    "password": "Google@12345",
-    "username": "CHANDAN",
-    "flag": "y"
-  },
-  {
-    "email": "Manishodnala@gmail.com",
-    "password": "Manish@123",
-    "username": "MANISH",
-    "flag": "a"
-  },
-  {
-    "email": "diptishghongade9@gmail.com",
-    "password": "1+NordCE5",
-    "username": "DIPTISH",
-    "flag": "e"
-  },
-  {
-    "email": "anujghongade100@gmail.com",
-    "password": "902288@Anuj",
-    "username": "ANUJ",
-    "flag": "e",
-    "ProfileType": "Freshar"
+    "email": "parag.jawanjal369@gmail.com",
+    "password": "Parag@31",
+    "username": "PARAG",
+    "flag": "l"
   }
 ]
