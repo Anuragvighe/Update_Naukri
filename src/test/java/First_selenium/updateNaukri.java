@@ -2,10 +2,12 @@ package First_selenium;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.List;
+import org.openqa.selenium.WebElement;
 
 public class updateNaukri {
     public void updateNaukri(String ID, String Pass,String msg,String chaR,String Profile) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\OneDrive\\Desktop\\mvn project\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\OneDrive\\Desktop\\mvn project\\New\\chromedriver-win64\\chromedriver.exe");
         //C:\Users\HP\OneDrive\Desktop\mvn project\chromedriver-win64\chromedriver.exe
         WebDriver driver= new ChromeDriver();
         driver.get("https://www.naukri.com/mnjuser/profile?id=&altresid");
@@ -19,6 +21,13 @@ public class updateNaukri {
         Thread.sleep(4000);
         By completeBtn = By.xpath("//a[text()='Complete' and @href='/mnjuser/profile']");
         By viewBtn     = By.xpath("//a[text()='View' and @href='/mnjuser/profile']");
+        By check = By.xpath("//div[contains(@class,'chatBot-ic-cross')]");
+
+        List<WebElement> elements = driver.findElements(check);
+
+        if (!elements.isEmpty() && elements.get(0).isDisplayed()) {
+            elements.get(0).click();
+        }
 
         if (driver.findElements(completeBtn).size() > 0) {
             driver.findElement(completeBtn).click();
