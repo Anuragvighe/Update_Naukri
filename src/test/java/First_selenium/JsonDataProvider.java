@@ -13,7 +13,7 @@ public class JsonDataProvider {
 
         ObjectMapper mapper = new ObjectMapper();
 
-        List<Map<String, String>> users =
+        List<Map<String, Object>> users =
                 mapper.readValue(
                         new File("src/test/resources/User.json"),
                         List.class
@@ -24,6 +24,7 @@ public class JsonDataProvider {
         for (int i = 0; i < users.size(); i++) {
             data[i][0] = users.get(i);
         }
+
         return data;
     }
 }

@@ -6,56 +6,61 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 
 public class updateNaukri {
-    public void updateNaukri(String ID, String Pass,String msg,String chaR,String Profile) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\OneDrive\\Desktop\\mvn project\\New\\chromedriver-win64\\chromedriver.exe");
-        //C:\Users\HP\OneDrive\Desktop\mvn project\chromedriver-win64\chromedriver.exe
-        WebDriver driver= new ChromeDriver();
-        driver.get("https://www.naukri.com/mnjuser/profile?id=&altresid");
-        driver.manage().window().maximize();
-        Thread.sleep(3000);
-        driver.findElement(By.id("usernameField")).sendKeys(ID);
-        Thread.sleep(100);
-        driver.findElement(By.id("passwordField")).sendKeys(Pass);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[contains(@type, 'submit') and text()='Login']")).click();
-        Thread.sleep(4000);
-        By completeBtn = By.xpath("//a[text()='Complete' and @href='/mnjuser/profile']");
-        By viewBtn     = By.xpath("//a[text()='View' and @href='/mnjuser/profile']");
-        By check = By.xpath("//div[contains(@class,'chatBot-ic-cross')]");
+    public void updateNaukri(String ID, String Pass, String msg, String chaR,String Profile,boolean flag) throws InterruptedException {
+        if (flag) {
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\HP\\OneDrive\\Desktop\\mvn project\\New\\chromedriver-win64\\chromedriver.exe");
+            //C:\Users\HP\OneDrive\Desktop\mvn project\chromedriver-win64\chromedriver.exe
+            WebDriver driver = new ChromeDriver();
+            driver.get("https://www.naukri.com/mnjuser/profile?id=&altresid");
+            driver.manage().window().maximize();
+            Thread.sleep(3000);
+            driver.findElement(By.id("usernameField")).sendKeys(ID);
+            Thread.sleep(100);
+            driver.findElement(By.id("passwordField")).sendKeys(Pass);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[contains(@type, 'submit') and text()='Login']")).click();
+            Thread.sleep(4000);
+            By completeBtn = By.xpath("//a[text()='Complete' and @href='/mnjuser/profile']");
+            By viewBtn = By.xpath("//a[text()='View' and @href='/mnjuser/profile']");
+            By check = By.xpath("//div[contains(@class,'chatBot-ic-cross')]");
 
-        List<WebElement> elements = driver.findElements(check);
+            List<WebElement> elements = driver.findElements(check);
 
-        if (!elements.isEmpty() && elements.get(0).isDisplayed()) {
-            elements.get(0).click();
-        }
+            if (!elements.isEmpty() && elements.get(0).isDisplayed()) {
+                elements.get(0).click();
+            }
 
-        if (driver.findElements(completeBtn).size() > 0) {
-            driver.findElement(completeBtn).click();
-        } else {
-            driver.findElement(viewBtn).click();
+            if (driver.findElements(completeBtn).size() > 0) {
+                driver.findElement(completeBtn).click();
+            } else {
+                driver.findElement(viewBtn).click();
+            }
+            Thread.sleep(2000);
+            if ("Fresher".equals(Profile)) {
+                driver.findElement(By.xpath("//div[contains(@class,'personal-details summary-container')]//*[contains(@class,'new-pencil')]")).click();
+            } else {
+                driver.findElement(By.xpath("//div[contains(@class, 'hdn')]//*[contains(@class, 'icon edit') and text()='editOneTheme']")).click();
+            }
+            Thread.sleep(1000);
+            driver.findElement(By.id("name")).sendKeys(Keys.BACK_SPACE);
+            Thread.sleep(1000);
+            driver.findElement(By.id("name")).sendKeys(chaR);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollTo(0, 500);");
+            Thread.sleep(1000);
+            if ("Freshar".equals(Profile)) {
+                driver.findElement(By.id("submit-btn")).click();
+            } else {
+                driver.findElement(By.id("saveBasicDetailsBtn")).click();
+            }
+            Thread.sleep(1000);
+            System.out.println("-------------------------------------------------------------------------------------------");
+            System.out.println(msg + " - P R O F I L E ___ U P D A T E D ___ S U C C E S S F U L L Y");
+            System.out.println("-------------------------------------------------------------------------------------------");
+            driver.quit();
         }
-        Thread.sleep(2000);
-        if ("Freshar".equals(Profile))
-        {
-            driver.findElement(By.xpath("//div[contains(@class,'personal-details summary-container')]//*[contains(@class,'new-pencil')]")).click();
-        }else {
-            driver.findElement(By.xpath("//div[contains(@class, 'hdn')]//*[contains(@class, 'icon edit') and text()='editOneTheme']")).click();
-        }
-        Thread.sleep(1000);
-        driver.findElement(By.id("name")).sendKeys(Keys.BACK_SPACE);
-        Thread.sleep(1000);
-        driver.findElement(By.id("name")).sendKeys(chaR);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollTo(0, 500);");
-        Thread.sleep(1000);
-        if("Freshar".equals(Profile)){driver.findElement(By.id("submit-btn")).click();}else{
-        driver.findElement(By.id("saveBasicDetailsBtn")).click();}
-        Thread.sleep(1000);
-        System.out.println("-------------------------------------------------------------------------------------------");
-        System.out.println(msg+" - P R O F I L E ___ U P D A T E D ___ S U C C E S S F U L L Y");
-        System.out.println("-------------------------------------------------------------------------------------------");
-        driver.quit();
     }
+
 }
 
 

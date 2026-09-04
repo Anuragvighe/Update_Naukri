@@ -6,20 +6,22 @@ import java.util.Map;
 public class CallingNaukriFunction extends JsonDataProvider{
     JsonDataProvider JDP=new JsonDataProvider();
     updateNaukri UN=new updateNaukri();
-    public CallingNaukriFunction() throws InterruptedException {
+    //private boolean flag;
+
+    public CallingNaukriFunction() {
     }
 
     @Test(priority = 1, dataProvider = "naukriUsers")
-
-    public void CallingNaukriFunction(Map<String, String> user)
+    public void CallingNaukriFunction(Map<String, Object> user)
             throws InterruptedException {
 
         UN.updateNaukri(
-                user.get("email"),
-                user.get("password"),
-                user.get("username"),
-                user.get("flag"),
-                user.get("ProfileType")
+                (String) user.get("email"),
+                (String) user.get("password"),
+                (String) user.get("username"),
+                (String) user.get("LW"),
+                (String) user.get("ProfileType"),
+                (Boolean) user.get("flag")
         );
     }
 
