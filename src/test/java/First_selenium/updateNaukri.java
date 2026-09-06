@@ -4,6 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class updateNaukri {
     public void updateNaukri(String ID, String Pass, String msg, String chaR,String Profile,boolean flag) throws InterruptedException {
@@ -55,8 +56,37 @@ public class updateNaukri {
             }
             Thread.sleep(1000);
             System.out.println("-------------------------------------------------------------------------------------------");
+
+
+
+            elements = driver.findElements(
+                    By.xpath("//span[contains(@class,'mod-date-val')]")
+            );
+
+            Assert.assertFalse(
+                    elements.isEmpty(),
+                    "Validation Failed: Last Updated element is not available"
+            );
+
+            WebElement lastUpdated = elements.get(0);
+
+            Assert.assertTrue(
+                    lastUpdated.isDisplayed(),
+                    "Validation Failed: Last Updated element is not visible"
+            );
+
+            String text = lastUpdated.getText();
+
+            Assert.assertTrue(
+                    text.contains("Today"),
+                    "Validation Failed: Expected 'Today' but found: " + text
+
+            );
+            System.out.println("Validation Passed: Last updated " + text);
             System.out.println(msg + " - P R O F I L E ___ U P D A T E D ___ S U C C E S S F U L L Y");
             System.out.println("-------------------------------------------------------------------------------------------");
+
+
             driver.quit();
         }
     }
