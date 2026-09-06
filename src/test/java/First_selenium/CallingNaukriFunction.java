@@ -41,7 +41,7 @@ public class CallingNaukriFunction extends JsonDataProvider {
         //System.out.println("User email: " + email);
 
         // 3. Send notification between 9:00 AM and 9:59 AM
-        if (hour == 9) {
+        if (hour == 15) {
 
             EmailUtil.sendEmail(
                     email,
@@ -53,10 +53,14 @@ public class CallingNaukriFunction extends JsonDataProvider {
             System.out.println(
                     "Notification Sent"
             );
+            System.out.println("-------------------------------------------------------------------------------------------");
+
 
         }else {
         System.out.println(
                 "Notification Not Sent"
-        );}
+        );
+        System.out.println("-------------------------------------------------------------------------------------------");
+        }
     }
 }
