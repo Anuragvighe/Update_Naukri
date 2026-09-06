@@ -98,11 +98,11 @@ public class updateNaukri {
             //System.out.println("User email: " + email);
 
             // 3. Send notification between 9:00 AM and 9:59 AM
-            if (hour == 16) {
+            if (hour == 9) {
 
                 EmailUtil.sendEmail(
                         ID,
-                        "Naukri Profile Updated",
+                        "DoNotReply_Naukri Profile Updated",
                         "Hello " + msg + ",\n\n"
                                 + "Your Naukri profile was updated successfully.\n\n"
                                 + "Update time: " + now
