@@ -2,6 +2,8 @@ package First_selenium;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.time.LocalTime;
 import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -84,10 +86,43 @@ public class updateNaukri {
             );
             System.out.println("Validation Passed: Last updated " + text);
             System.out.println(msg + " - P R O F I L E ___ U P D A T E D ___ S U C C E S S F U L L Y");
-            System.out.println("-------------------------------------------------------------------------------------------");
-
 
             driver.quit();
+
+            // 2. Check current time AFTER Naukri update
+            LocalTime now = LocalTime.now();
+
+            int hour = now.getHour();
+
+            //System.out.println("Current time: " + now);
+            //System.out.println("User email: " + email);
+
+            // 3. Send notification between 9:00 AM and 9:59 AM
+            if (hour == 15) {
+
+                EmailUtil.sendEmail(
+                        ID,
+                        "Naukri Profile Updated",
+                        "Hello " + msg + ",\n\n"
+                                + "Your Naukri profile was updated successfully.\n\n"
+                                + "Update time: " + now
+                );
+                System.out.println(
+                        "Notification Sent"
+                );
+                System.out.println("-------------------------------------------------------------------------------------------");
+
+
+            }else {
+                System.out.println(
+                        "Notification Not Sent"
+                );
+                System.out.println("-------------------------------------------------------------------------------------------");
+
+            }
+
+
+
         }
     }
 

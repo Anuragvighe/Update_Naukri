@@ -19,9 +19,9 @@ public class EmailUtil {
         String appPassword = System.getenv("AuthCode");
 
         //String toEmail = "anuragvighe8@gmail.com";
-        //System.out.println("Email found: " + (fromEmail != null));
-        //System.out.println("Password found: " + (appPassword != null));
-        //System.out.println("Password found: " + toEmail);
+        System.out.println("Email found: " + (fromEmail != null));
+        System.out.println("Password found: " + (appPassword != null));
+        System.out.println("Password found: " + toEmail);
 
         Properties properties = new Properties();
 
