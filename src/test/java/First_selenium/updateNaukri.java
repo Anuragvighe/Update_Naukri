@@ -98,7 +98,7 @@ public class updateNaukri {
             //System.out.println("User email: " + email);
 
             // 3. Send notification between 9:00 AM and 9:59 AM
-            if (hour == 15) {
+            if (hour == 16) {
 
                 EmailUtil.sendEmail(
                         ID,
